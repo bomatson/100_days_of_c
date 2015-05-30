@@ -38,11 +38,13 @@ int getLine(void) {
   extern char line[];
 
   for(i=0; i< MAXLINE -1 && (c=getchar()) != EOF && c!='\n'; i++)
+    /* printf("Lopping in getline: %c", c); */
     line[i] = c;
   if (c == '\n') {
     line[i] = c;
     ++i;
   }
+  printf("line in getline: %s", line);
   /* this is a null character */
   line[i] = '\0';
   return i;
