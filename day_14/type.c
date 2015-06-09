@@ -26,6 +26,9 @@ int htoi(char s[], int size) {
       hexdigit = s[i] - 'a' + 10;
     } else if(s[i] >= 'A' && s[i] <= 'F') {
       hexdigit = s[i] - 'A' + 10;
+    } else {
+      printf("Not a hexdigit");
+      break;
     }
 
     result += (hexdigit * pow(16, location));
@@ -39,5 +42,6 @@ int htoi(char s[], int size) {
 int main() {
   printf("%d\n", htoi("7DE", 3));
   printf("%d\n", htoi("7DEF", 4));
+  printf("%d\n", htoi("7DXE", 4));
 }
 
